@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AirPods Pro Animation Effect Demo</title>
+</head>
+<body style="height: 2000px; background-color: #222629;">
+    <img style="position:fixed" id="image" src="img (1).png" alt="">
+    <script>
+        const img = document.getElementById("image");
+        let frame = 1;
+        const MAX_FRAMES = 60;
+        window.addEventListener("scroll", (e) => {
+            frame = ((currentScrollPercentage() / 100) * MAX_FRAMES).toFixed();
+            img.src = `img (${frame}).png`;
+        }, false);
+        function currentScrollPercentage()
+        {
+            return ((document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight) * 100).toFixed();
+        }
+    </script>
+</body>
+</html>
